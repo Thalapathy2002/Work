@@ -1,0 +1,93 @@
+1) write down the 12 principles of agile methodology? and Discuss them?
+
+2) What is the difference between sprint backlog and product backlog?
+
+3) What is increment in agile methodology?
+
+4) Discuss the different roles in scrum framework?
+
+5) what is scrum methodology?
+
+6) scenarios in scrum framework?
+
+7) Events and ceremonies ?
+
+8) 
+
+unit -2 
+what is the primary role of a scrum master in a agile team?
+
+how does the product owner ensure that development team is working on the priority task
+
+define a cross functional team and explain why it's important for agile development ?
+
+what is the difference between product manager and product owner in agile ?
+
+how can effective communication help to resolve conflicts with in agile team
+
+
+1) your agile team is struggling with collaboration because developer and tester are working in silos ?
+
+as a scrum master how would you encourage cross functional team work collaboration ?
+
+2) explain the importance of role playing exercises in agile team? how do they help improve understanding of different roles such as scrum master and development team?
+
+3) discuss the key responsibilities  of a product manager in a agile development ? how does a product manager role differ from that of scrum master ?
+
+4) As a product owner you notice that stakeholders frequently changing requirements, leading to a confusion in the development team, how would you manage stakeholders expectation while ensuring team remain focus? 
+
+5) your team is facing the conflict between a product owner and developers regarding a users story priority, what strategies would you use to resolve the conflict and ensure the smooth collaboration?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+This research examines how Large Language Models (LLMs) can promote good governance and achieve social goals in a decentralized manner. LLMs assist policymaking by analyzing large datasets, identifying trends, and offering solutions, leading to more informed decisions. They can also be adapted to local cultures and political situations, such as in India, where laws can be organized according to people's views, fostering unity within communities.
+
+LLMs improve communication by generating simple, clear summaries for diverse audiences. They enhance data management by reducing the processing time for unstructured data, lowering data administration costs, and improving the efficiency of existing systems.
+
+In social work, LLMs support real-time chat services, offering customized assistance to underserved populations, thus increasing participation and the quality of social programs. Additionally, LLMs can play a role in technology development within government, by providing training to employees and integrating AI tools into governance practices.
+
+In conclusion, this study highlights the transformative potential of LLMs in policy improvement, communication, data management, and program delivery, making governance more inclusive, efficient, and responsive to societal needs.

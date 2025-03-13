@@ -1,0 +1,74 @@
+State,Key Governance Issues,Social Issues
+Andhra Pradesh,"Agrarian distress, governance transparency, coastal development","Farmer suicides, caste-based discrimination, urban migration"
+Arunachal Pradesh,"Infrastructure gaps, connectivity, border security","Indigenous rights, tribal welfare, language preservation"
+Assam,"Illegal immigration, NRC issues, floods","Ethnic conflicts, unemployment, environmental displacement"
+Bihar,"Law and order, poor health infrastructure, political corruption","Poverty, caste discrimination, out-migration"
+Chhattisgarh,"Naxal insurgency, tribal land rights, healthcare access","Malnutrition, literacy rate gaps, displacement of tribals"
+Goa,"Environmental regulations, tourism dependency, waste management","Drug abuse, unemployment among youth, real estate conflicts"
+Gujarat,"Industrial pollution, water scarcity, urban expansion","Communal tensions, coastal displacement, tribal welfare"
+Haryana,"Gender imbalance, agrarian crisis, urban congestion","Honor killings, caste conflicts, drug addiction"
+Himachal Pradesh,"Climate change, deforestation, hydro projects","Migration of youth, lack of higher education, unemployment"
+Jharkhand,"Tribal land encroachment, industrial pollution, governance corruption","Malnutrition, human trafficking, child labor"
+Karnataka,"IT sector expansion, water disputes, governance transparency","Language-based politics, farmer distress, urban-rural divide"
+Kerala,"Waste management, coastal erosion, aging population","High suicide rates, substance abuse, brain drain"
+Madhya Pradesh,"Tribal displacement, health system inefficiency, corruption","Malnutrition, gender-based violence, high child mortality"
+Maharashtra,"Infrastructure stress, regional disparities, agrarian distress","Farmer suicides, caste conflicts, slum proliferation"
+Manipur,"Insurgency, AFSPA, drug trafficking","Ethnic violence, women’s rights, youth unemployment"
+Meghalaya,"Mining and environmental degradation, governance transparency","Indigenous rights, drug abuse, youth employment"
+Mizoram,"Border conflicts, transport connectivity, financial mismanagement","Youth unemployment, lack of higher education, cultural preservation"
+Nagaland,"Naga peace talks, border disputes, unemployment","Drug addiction, gender discrimination, land ownership issues"
+Odisha,"Mining and deforestation, disaster management, tribal rights","Malnutrition, rural unemployment, displacement"
+Punjab,"Drug crisis, agricultural distress, declining groundwater","Unemployment, caste tensions, youth migration"
+Rajasthan,"Water scarcity, desertification, tourism regulation","Child marriage, gender disparity, education access"
+Sikkim,"Hydropower expansion, ecological preservation, connectivity","Migration, cultural identity concerns, youth unemployment"
+Tamil Nadu,"Language politics, industrial pollution, water crisis","Urban slums, caste violence, farmer protests"
+Telangana,"Urbanization, farmer welfare, industrialization","Farmer suicides, water disputes, economic disparity"
+Tripura,"Border security, connectivity, insurgency history","Unemployment, poverty, lack of education infrastructure"
+Uttar Pradesh,"Population density, law enforcement issues, corruption","Communal violence, gender-based crimes, education quality"
+Uttarakhand,"Natural disasters, migration, hydro projects","Youth unemployment, healthcare access, ecological balance"
+West Bengal,"Political violence, border issues, industrial decline","Refugee crisis, gender violence, economic disparity"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+State,Issues Faced,Lacked in Governance,Solutions Suggested
+Andhra Pradesh,Agrarian distress, farmer suicides, low crop productivity, water scarcity, caste-based discrimination, migration,Lack of transparent governance, poor rural infrastructure, inadequate support for farmers, lack of rural welfare schemes,Strengthen rural infrastructure, implement better farmer support programs, ensure fair land reforms, improve water management, address caste-based disparities
+,Agriculture distress, farmer suicides, low crop productivity, water scarcity, caste-based discrimination, migration,Weak enforcement of laws, frequent leadership changes, lack of transparency in governance, corruption,Strengthen anti-corruption measures, increase transparency in political and administrative systems, establish more robust legal frameworks
+,Coastal development issues, inadequate protection for coastal communities, lack of sustainable fishing practices,Insufficient coastal infrastructure, lack of regulations for sustainable fishing, weak disaster preparedness,Promote coastal infrastructure development, improve governance and regulation in fisheries, build disaster preparedness systems
+,Educational disparities, low literacy rates, poor quality of education in rural areas, high dropout rates,Insufficient educational resources in rural areas, lack of qualified teachers, inadequate vocational training,Improve rural education infrastructure, create scholarships and incentives for teachers in remote areas, develop vocational training programs
+,High unemployment, especially among youth, underdeveloped industrial sector, low foreign direct investment,Poor investment in industrial sectors, lack of startup ecosystems, inadequate focus on skill development,Encourage industrial growth, create an ecosystem for startups, incentivize job creation in rural areas, provide skill development programs for youth
+,Healthcare challenges, lack of proper healthcare infrastructure, high maternal mortality rate, rural healthcare access issues,Insufficient healthcare resources in rural areas, lack of trained healthcare workers, poor infrastructure,Increase healthcare investments in rural areas, improve access to health services, train healthcare workers and incentivize them to work in remote areas
+,Environmental degradation, deforestation, soil erosion, and the impacts of climate change (e.g., floods, droughts),Weak enforcement of environmental laws, lack of policies on climate change adaptation, poor land management,Strengthen environmental regulations, enforce sustainable land-use policies, improve flood and drought management, increase afforestation efforts
+,Water scarcity, over-exploitation of groundwater, lack of irrigation systems, agricultural distress,Poor water resource management, insufficient rainwater harvesting, weak irrigation systems,Implement better water management solutions, promote rainwater harvesting, modernize irrigation infrastructure, create awareness around sustainable water use
+,Poor rural infrastructure, lack of quality roads, low electrification rates, inadequate sanitation facilities,Lack of efficient rural development programs, insufficient focus on infrastructure in remote areas, poor waste management,Focus on rural infrastructure development, improve electrification and sanitation, invest in transportation networks, strengthen local governance for public service delivery
+,Urban migration, overcrowding in cities, lack of urban planning, inadequate housing for migrants,Weak urban governance, lack of long-term planning, absence of affordable housing programs,Focus on planned urbanization, improve urban housing and slum rehabilitation programs, provide employment opportunities in rural areas to reduce migration
+,Tribal welfare, displacement due to development projects, lack of land rights for indigenous populations,Inadequate land rights protection, weak governance in tribal areas, lack of proper rehabilitation programs,Strengthen land rights for indigenous communities, provide fair compensation and rehabilitation, implement tribal development schemes
+,Political instability due to factionalism, frequent protests, law and order issues in some regions,Inconsistent governance, weak law enforcement, political interference in administration,Ensure the separation of politics from governance, improve law and order situation, strengthen administrative machinery to address local unrest
+,Economic disparities, income inequality, regional imbalances, development lag in certain districts,Inequitable distribution of resources, lack of focus on backward areas, poor targeting of social welfare programs,Focus on regional development, implement targeted welfare programs for backward areas, address income inequality through inclusive policies
+,Industrial stagnation, lack of growth in manufacturing and service sectors, limited job creation,Poor industrial policy frameworks, inadequate infrastructure for industrial growth, lack of support for small businesses,Promote industrial growth, invest in infrastructure, create policies to support local industries, provide incentives for job creation
+,Lack of efficient governance at the grassroots level, delayed implementation of welfare schemes,Slow bureaucratic processes, lack of accountability in local administration, inefficiency in welfare distribution,Decentralize governance, streamline welfare scheme implementation, improve transparency and accountability at the grassroots level
