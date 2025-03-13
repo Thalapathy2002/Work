@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jyothir Raghavalu Bhogi - Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom, #f8f9fa, #eaeaea);
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+      font-size: 3.5rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.25rem;
+      margin-bottom: 30px;
+    }
+
+    header .btn-outline-light {
+      border-radius: 25px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      transition: all 0.3s ease-in-out;
+    }
+
+    header .btn-outline-light:hover {
+      background: #ffffff;
+      color: #6a11cb;
+    }
+
+    section {
+      padding: 60px 20px;
+    }
+
+    h2 {
+      color: #6a11cb;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 2.5rem;
+      text-transform: uppercase;
+    }
+
+    .highlight {
+      background: #ffffff;
+      border: 1px solid #ddd;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .highlight:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .text-highlight {
+      color: #6a11cb;
+      font-weight: bold;
+    }
+
+    .project a {
+      display: inline-block;
+      margin-top: 10px;
+      background: #2575fc;
+      color: white;
+      border-radius: 25px;
+      padding: 10px 20px;
+      transition: all 0.3s ease-in-out;
+      text-decoration: none;
+    }
+
+    .project a:hover {
+      background: #6a11cb;
+      color: white;
+    }
+
+    footer {
+      background: linear-gradient(135deg, #2575fc, #6a11cb);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    footer p {
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header Section -->
+  <header id="header">
+    <h1>Jyothir Raghavalu Bhogi</h1>
+    <p>Software Developer | Data Analyst</p>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/jyothir-raghavalu-bhogi-059500252/" class="btn btn-outline-light mx-2" target="_blank">LinkedIn</a>
+      <a href="https://github.com/jyothir-369" class="btn btn-outline-light mx-2" target="_blank">GitHub</a>
+      <a href="mailto:jyothirraghavalu369@gmail.com" class="btn btn-outline-light mx-2">Email</a>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <main>
+    <section>
+      <div class="container">
+        <h2>About Me</h2>
+        <div class="highlight">
+          <p>
+            Hi! I'm Jyothir Raghavalu Bhogi, a student at Lovely Professional University (LPU), Punjab, pursuing a Bachelor's degree in Computer Science and Engineering. I have a passion for software development, data analysis, and machine learning, with experience in building computational tools and real-world applications.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Additional sections (Skills, Experience, Projects, Certifications, Contact) follow similar structure -->
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Jyothir Raghavalu Bhogi</p>
+  </footer>
+
+  <script>
+    // Function to apply responsive styles
+    function applyResponsiveStyles() {
+      const header = document.getElementById('header');
+      const highlights = document.querySelectorAll('.highlight');
+
+      // Get the viewport width
+      const width = window.innerWidth;
+
+      if (width <= 768) { // Tablet
+        header.style.padding = "40px 20px";
+        highlights.forEach(highlight => highlight.style.padding = "20px");
+      } else if (width <= 576) { // Mobile
+        header.style.padding = "30px 15px";
+        highlights.forEach(highlight => highlight.style.padding = "15px");
+      } else {
+        // Default styles for larger screens
+        header.style.padding = "60px 20px";
+        highlights.forEach(highlight => highlight.style.padding = "25px");
+      }
+    }
+
+    // Apply styles on load and resize
+    window.addEventListener('load', applyResponsiveStyles);
+    window.addEventListener('resize', applyResponsiveStyles);
+  </script>
+</body>
+
+</html>

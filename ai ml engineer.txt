@@ -1,0 +1,9 @@
+Introduction to Shell
+
+Joining Data in SQL
+
+Python Data Science Toolbox (Part 1)
+
+Python Data Science Toolbox (Part 2)
+
+Intro to SQL for Data Science

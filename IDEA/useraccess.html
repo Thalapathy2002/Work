@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Two Larger Stacked Boxes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4; /* Light background for the page */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* Full viewport height */
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column; /* Stack boxes vertically */
+            gap: 40px; /* Space between the boxes */
+            padding: 20px;
+            width: 400px; /* Container width (wide enough for the bigger boxes) */
+        }
+
+        .box {
+            background-color: #000000; /* Black background color for the boxes */
+            height: 350px; /* Increased height for each square box */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px; /* Rounded corners */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .box:hover {
+            transform: scale(1.05); /* Slight zoom effect on hover */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+
+</body>
+</html>

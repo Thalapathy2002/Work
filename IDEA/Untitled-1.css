@@ -1,0 +1,29 @@
+/* Navbar header */
+.navbar-header {
+    font-size: 1.8rem;
+    text-align: center;
+    color: #000;
+    margin-bottom: 30px;
+}
+
+.navbar a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #262626;
+    padding: 15px;
+    width: 100%;
+    transition: background-color 0.2s ease-in-out;
+    font-size: 1.2rem;
+    padding-left: 10px;  /* Padding added to ensure there is space between the tab icon and the line */
+}
+
+.navbar a:hover {
+    background-color: #f2f2f2;
+}
+
+.navbar a i {
+    font-size: 1.8rem;
+    margin-right: 10px;
+}

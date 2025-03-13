@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar with Search and Dropdown</title>
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    
+    <!-- Embedded CSS -->
+    <style>
+        /* Navbar Section */
+        .navbar {
+            width: 250px;
+            background-color: #2c3e50;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            padding: 10px;
+            color: #fff;
+            transition: width 0.3s ease;
+        }
+
+        .navbar-header {
+            font-size: 18px; /* Smaller font size for the header */
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #ecf0f1;
+            display: flex;
+            align-items: center;
+            padding: 25px 20px; /* Reduced padding */
+            margin: 6px 0; /* Reduced margin */
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-size: 14px; /* Smaller font size */
+        }
+
+        .navbar a:hover {
+            background-color: #34495e;
+        }
+
+        /* Space between the icon and the text for the main navigation tabs */
+        .navbar a i {
+            margin-right: 15px; /* Added more space between icon and text */
+        }
+
+        /* Hidden Search Bar by Default */
+        .navbar .search-bar {
+            display: none;
+            width: 0;
+            height: 40px;
+            background-color: #fff;
+            color: #333;
+            border: none;
+            border-radius: 20px;
+            padding: 0 10px;
+            font-size: 14px;
+            transition: width 0.5s ease;
+        }
+
+        /* Collapse and Show Only Icons in Navbar */
+        .navbar.collapsed .navbar-header,
+        .navbar.collapsed a span {
+            display: none;
+        }
+
+        .navbar.collapsed .navbar a {
+            text-align: center;
+            padding: 8px 10px;
+        }
+
+        .navbar.collapsed .navbar a i {
+            font-size: 18px; /* Reduced icon size */
+        }
+
+        /* Show the Search Bar When Collapsed */
+        .navbar.collapsed .search-bar {
+            display: block;
+            width: 180px; /* Adjusted width for collapsed state */
+            margin: 10px 0;
+        }
+
+        /* Hamburger Menu section */
+        .hamburger {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-size: 16px; /* Smaller font size for hamburger */
+            padding: 8px;
+            margin-top: 20px;
+            text-align: center;
+            align-self: center;
+        }
+
+        .hamburger i {
+            color: white;
+        }
+
+        .hamburger span {
+            color: white;
+            margin-left: 8px;  /* Space between icon and text */
+        }
+
+        /* Dropdown Menu (hidden by default) */
+        .dropdown-menu {
+            display: none;
+            flex-direction: column;
+            padding: 0;
+            position: absolute;
+            top: 0;  /* Default top position */
+            left: 0;
+            width: 100%;
+        }
+
+        .dropdown-menu.show {
+            display: flex;  /* Show when 'show' class is added */
+        }
+
+        /* Dropdown Menu Items */
+        .dropdown-menu a {
+            background-color: #34495e;
+            padding: 15px 20px; /* Adjust padding for better spacing inside each item */
+            margin: 8px 0; /* Increase margin to add more vertical space between items */
+            border-radius: 5px;
+            color: #ecf0f1;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-size: 14px; /* Font size */
+            display: flex;
+            align-items: center;
+        }
+
+        /* Space between the icon and the text for dropdown items */
+        .dropdown-menu a i {
+            margin-right: 15px; /* Adjust this value for desired space */
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #1abc9c;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                width: 200px;
+            }
+
+            .navbar-header {
+                font-size: 18px;
+            }
+
+            .navbar a {
+                font-size: 12px; /* Further reduced font size for smaller screens */
+            }
+
+            /* Show the hamburger menu on smaller screens */
+            .hamburger {
+                display: block;
+            }
+
+            /* Make the dropdown visible when toggled */
+            .dropdown-menu {
+                display: none;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar Section -->
+    <section class="navbar">
+        <!-- Navbar Header (e.g., site name or logo) -->
+        <div class="navbar-header">CAT</div>
+
+        <!-- Always visible tabs -->
+        <a href="#">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+
+        <a href="#" class="tab search-tab" onclick="toggleSearch()">
+            <i class="fas fa-search"></i>
+            <span>Search</span>
+        </a>
+
+        <a href="#">
+            <i class="fas fa-globe"></i>
+            <span>Explore</span>
+        </a>
+        <a href="#">
+            <i class="fas fa-video"></i>
+            <span>Reels</span>
+        </a>
+        <a href="#">
+            <i class="fas fa-comment"></i>
+            <span>Messages</span>
+        </a>
+        <a href="#">
+            <i class="fas fa-bell"></i>
+            <span>Notifications</span>
+        </a>
+        <a href="#">
+            <i class="fas fa-plus-circle"></i>
+            <span>Create</span>
+        </a>
+        <a href="#">
+            <i class="fas fa-user"></i>
+            <span>Profile</span>
+        </a>
+        <a href="#">
+            <i class="fas fa-cogs"></i>
+            <span>AI Studio</span>
+        </a>
+        <a href="#">
+            <i class="fas fa-comments"></i>
+            <span>Threads</span>
+        </a>
+
+        <!-- Settings link (always visible) -->
+        <a href="#">
+            <i class="fas fa-cogs"></i>
+            <span>Settings</span>
+        </a>
+
+        <!-- More Tab (styled like other tabs) -->
+        <a href="#" class="hamburger" onclick="toggleDropdown()">
+            <i class="fas fa-bars"></i>
+            <span>More</span>
+        </a>
+
+        <!-- Dropdown Menu (appears above the More tab) -->
+        <div class="dropdown-menu" id="dropdownMenu">
+            <a href="#"><i class="fas fa-tasks"></i> Your Activity</a>
+            <a href="#"><i class="fas fa-bookmark"></i> Saved</a>
+            <a href="#"><i class="fas fa-adjust"></i> Switch Appearance</a>
+            <a href="#"><i class="fas fa-exclamation-circle"></i> Report a Problem</a>
+            <a href="#"><i class="fas fa-users-cog"></i> Switch Accounts</a>
+            <a href="#"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+        </div>
+
+        <!-- Search Bar (initially hidden) -->
+        <input type="text" class="search-bar" placeholder="Search...">
+    </section>
+
+    <!-- Script for Dropdown and Search Bar -->
+    <script>
+        // Toggle the visibility of the search bar
+        function toggleSearch() {
+            document.querySelector('.navbar').classList.toggle('collapsed');
+        }
+
+        // Toggle the visibility of the dropdown menu
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdownMenu');
+            dropdown.classList.toggle('show');
+
+            // If dropdown is shown, position it above the "More" tab
+            if (dropdown.classList.contains('show')) {
+                const moreTab = document.querySelector('.hamburger');
+                const moreTabRect = moreTab.getBoundingClientRect();
+                dropdown.style.top = `${moreTabRect.top - dropdown.offsetHeight - 10}px`; // 10px padding
+            }
+        }
+    </script>
+</body>
+</html>

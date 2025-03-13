@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram-like Interface</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+    <!-- Link to efg.css -->
+    <link rel="stylesheet" href="efg.css">
+</head>
+<body>
+
+
+<!-- Header Section with Stories -->
+<section class="header">
+    <!-- Stories Section -->
+    <div class="stories">
+        <div class="story" onclick="openStory(0)">
+            <img src="https://via.placeholder.com/100" alt="User 1" class="story-image">
+            <span class="story-name">User 1</span>
+        </div>
+        <div class="story" onclick="openStory(1)">
+            <img src="https://via.placeholder.com/100" alt="User 2" class="story-image">
+            <span class="story-name">User 2</span>
+        </div>
+        <div class="story" onclick="openStory(2)">
+            <img src="https://via.placeholder.com/100" alt="User 3" class="story-image">
+            <span class="story-name">User 3</span>
+        </div>
+        <div class="story" onclick="openStory(3)">
+            <img src="https://via.placeholder.com/100" alt="User 4" class="story-image">
+            <span class="story-name">User 4</span>
+        </div>
+        <div class="story" onclick="openStory(4)">
+            <img src="https://via.placeholder.com/100" alt="User 5" class="story-image">
+            <span class="story-name">User 5</span>
+        </div>
+    </div>
+</section>
+
+<!-- Modal for Viewing Story -->
+<div id="storyModal" class="modal">
+    <div class="modal-content">
+        <video id="storyVideo" controls>
+            <source id="videoSource" src="" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="modal-navigation">
+            <button id="prevBtn" onclick="navigateStory(-1)">Prev</button>
+            <button id="nextBtn" onclick="navigateStory(1)">Next</button>
+        </div>
+        <span class="close-btn" onclick="closeModal()">×</span>
+    </div>
+</div>
+
+<script>
+    const storyVideos = [
+        'https://www.w3schools.com/html/movie.mp4',  // Story 1
+        'https://www.w3schools.com/html/movie.mp4',  // Story 2
+        'https://www.w3schools.com/html/movie.mp4',  // Story 3
+        'https://www.w3schools.com/html/movie.mp4',  // Story 4
+        'https://www.w3schools.com/html/movie.mp4'   // Story 5
+    ];
+    let currentStoryIndex = -1;
+
+    // Function to open the selected story
+    function openStory(index) {
+        currentStoryIndex = index;
+        const modal = document.getElementById("storyModal");
+        const video = document.getElementById("storyVideo");
+        const videoSource = document.getElementById("videoSource");
+
+        // Set the video source and play it
+        videoSource.src = storyVideos[currentStoryIndex];
+        video.load();
+        video.play();
+
+        // Show the modal (center it on the page)
+        modal.style.display = "flex";
+        updateNavigationButtons();
+    }
+
+    // Function to navigate to the next/previous story
+    function navigateStory(direction) {
+        currentStoryIndex += direction;
+
+        // Ensure the story index loops (next after last, previous before first)
+        if (currentStoryIndex >= storyVideos.length) {
+            currentStoryIndex = 0; // Loop back to the first story
+        } else if (currentStoryIndex < 0) {
+            currentStoryIndex = storyVideos.length - 1; // Loop to the last story
+        }
+
+        const video = document.getElementById("storyVideo");
+        const videoSource = document.getElementById("videoSource");
+
+        // Set the new video source and play
+        videoSource.src = storyVideos[currentStoryIndex];
+        video.load();
+        video.play();
+
+        // Update the navigation buttons
+        updateNavigationButtons();
+    }
+
+    // Function to close the modal
+    function closeModal() {
+        const modal = document.getElementById("storyModal");
+        const video = document.getElementById("storyVideo");
+
+        // Pause the video and hide the modal
+        video.pause();
+        modal.style.display = "none";
+    }
+
+    // Function to update the navigation buttons (disable/enable)
+    function updateNavigationButtons() {
+        const prevBtn = document.getElementById("prevBtn");
+        const nextBtn = document.getElementById("nextBtn");
+
+        // Enable/Disable the buttons based on the current story
+        if (currentStoryIndex === 0) {
+            prevBtn.disabled = true;
+        } else {
+            prevBtn.disabled = false;
+        }
+
+        if (currentStoryIndex === storyVideos.length - 1) {
+            nextBtn.disabled = true;
+        } else {
+            nextBtn.disabled = false;
+        }
+    }
+</script>
+
+<style>
+    /* Style for the stories section */
+    .stories {
+        display: flex;
+        gap: 10px;
+        overflow-x: auto;
+    }
+
+    .story {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        overflow: hidden;
+        cursor: pointer;
+    }
+
+    .story-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .story-name {
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 12px;
+        color: #fff;
+        font-weight: bold;
+    }
+
+    /* Modal for story */
+    .modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-content {
+        position: relative;
+        max-width: 800px;  /* Larger modal size */
+        max-height: 800px; /* Larger modal size */
+        background: #ffffff25;
+        border-radius: 10px;
+        padding: 20px;
+        overflow: hidden;
+    }
+
+    .modal-content video {
+        width: 100%;
+        height: auto;
+        max-height: 600px;  /* Maintain a reasonable height */
+        border-radius: 10px;
+    }
+
+    .modal-navigation {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+    }
+
+    .modal-navigation button {
+        padding: 10px;
+        background-color: #333;
+        color: white;
+        border: none;
+        cursor: pointer;
+    }
+
+    .modal-navigation button:disabled {
+        background-color: #ccc;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 30px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .close-btn:hover {
+        color: #ff0000;
+    }
+</style>
+
+
+<!-- Navbar Section -->
+<!-- Navbar Section -->
+<!-- Navbar Section -->
+<!-- Navbar Section -->
+<!-- Navbar Section -->
+<section class="navbar">
+    <div class="navbar-header">CAT</div>
+    
+
+
+     <!-- Search Bar (initially hidden) -->
+     <input type="text" class="search-bar" placeholder="Search...">    
+
+
+     
+    <!-- Always visible tabs -->
+    <a href="#">
+        <i class="fas fa-home"></i>
+        <span>Home</span>
+    </a>
+
+    <a href="#" class="tab search-tab" onclick="toggleSearch()">
+        <i class="fas fa-search"></i>
+        <span>Search</span>
+    </a>
+    
+
+    
+
+    <a href="#">
+        <i class="fas fa-globe"></i>
+        <span>Explore</span>
+    </a>
+    <a href="#">
+        <i class="fas fa-video"></i>
+        <span>Reels</span>
+    </a>
+    <a href="#">
+        <i class="fas fa-comment"></i>
+        <span>Messages</span>
+    </a>
+    <a href="#">
+        <i class="fas fa-bell"></i>
+        <span>Notifications</span>
+    </a>
+    <a href="#">
+        <i class="fas fa-plus-circle"></i>
+        <span>Create</span>
+    </a>
+    <a href="#">
+        <i class="fas fa-user"></i>
+        <span>Profile</span>
+    </a>
+    <a href="#">
+        <i class="fas fa-cogs"></i>
+        <span>AI Studio</span>
+    </a>
+    <a href="#">
+        <i class="fas fa-comments"></i>
+        <span>Threads</span>
+    </a>
+
+    <!-- Settings link (always visible) -->
+    <a href="#">
+        <i class="fas fa-cogs"></i>
+        <span>Settings</span>
+    </a>
+   
+    
+    <!-- Hamburger Menu Icon (below settings) -->
+    <div class="hamburger" onclick="toggleDropdown()">
+        <i class="fas fa-bars"></i>
+        <span>More</span>
+    </div>
+    
+    <!-- Dropdown Menu (hidden by default) -->
+<div class="dropdown-menu" id="dropdownMenu">
+    <a href="#"><i class="fas fa-tasks"></i> Your Activity</a>
+    <a href="#"><i class="fas fa-bookmark"></i> Saved</a>
+    <a href="#"><i class="fas fa-adjust"></i> Switch Appearance</a>
+    <a href="#"><i class="fas fa-exclamation-circle"></i> Report a Problem</a>
+    <a href="#"><i class="fas fa-users-cog"></i> Switch Accounts</a>
+    <a href="#"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+</div>
+
+</section>
+<script>
+    // Toggle the visibility of the dropdown menu
+    function toggleDropdown() {
+        const dropdown = document.getElementById('dropdownMenu');
+        dropdown.classList.toggle('show');
+
+        // If dropdown is shown, position it below the "More" tab
+        if (dropdown.classList.contains('show')) {
+            const moreTab = document.querySelector('.hamburger'); // Assuming '.hamburger' is the "More" tab
+            const moreTabRect = moreTab.getBoundingClientRect();
+            
+            // Increase the offset (e.g., 50px or 100px)
+            dropdown.style.top = `${moreTabRect.top + moreTabRect.height + 50}px`; // 50px padding to move it further down
+        }
+    }
+</script>
+
+<!-- Style for the Search Bar -->
+<style>
+    .navbar {
+        width: 250px;
+        background-color: #2c3e50;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        padding: 10px;
+        color: #fff;
+        transition: width 0.3s ease;
+    }
+
+    .navbar-header {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .navbar a {
+        text-decoration: none;
+        color: #ecf0f1;
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .navbar a:hover {
+        background-color: #34495e;
+    }
+
+    /* Hidden Search Bar by Default */
+    .navbar .search-bar {
+        display: none;
+        width: 0;
+        height: 40px;
+        background-color: #fff;
+        color: #333;
+        border: none;
+        border-radius: 20px;
+        padding: 0 10px;
+        font-size: 14px;
+        transition: width 0.5s ease;
+    }
+
+    /* Collapse and Show Only Icons in Navbar */
+    .navbar.collapsed .navbar-header,
+    .navbar.collapsed a span {
+        display: none;
+    }
+
+    .navbar.collapsed .navbar a {
+        text-align: center;
+        padding: 12px;
+    }
+
+    .navbar.collapsed .navbar a i {
+        font-size: 20px;
+    }
+
+    /* Show the Search Bar When Collapsed */
+    .navbar.collapsed .search-bar {
+        display: block;
+        width: 200px;
+        margin: 10px 0;
+    }
+
+</style>
+
+<!-- JavaScript to Toggle the Search Bar -->
+<script>
+    function toggleSearch() {
+        const navbar = document.querySelector('.navbar');
+        
+        // Toggle the collapsed state of the navbar
+        navbar.classList.toggle('collapsed');
+    }
+</script>
+
+
+
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+<script>
+    function toggleDropdown() {
+        const dropdownMenu = document.querySelector('.dropdown-menu');
+        dropdownMenu.classList.toggle('show');
+    }
+</script>
+
+
+<script>
+    document.querySelector('.navbar a.active').addEventListener('click', function (e) {
+        e.preventDefault(); // Prevent the default link behavior
+        document.querySelector('.main-content').scrollIntoView({ behavior: 'smooth' });
+    });
+    
+</script>
+
+
+
+
+<!--Explore Section-->
+
+<!--Reels Section-->
+
+<!--Messages Section-->
+
+
+<!-- Notification Section-->
+
+
+<!--Create Section-->
+
+<!-- Profile Section-->
+
+<!--AI Studio Section-->
+
+<!--Threads Section-->
+
+<!--Settings Sections-->
+
+<!--Your activity Section-->
+
+
+<!--Saved Section-->
+
+<!--Switch appearance Section-->
+
+<!--Report a problem Section-->
+
+<!--Switch Accounts Section-->
+
+<!--Log out section-->
+
+
+
+
+<!-- Main Content Section -->
+<section class="main-content" id="posts">
+    <div class="posts">
+        <!-- First Post -->
+        <div class="post">
+            <div class="post-header">
+                <img src="https://via.placeholder.com/50" alt="User 1" class="user-avatar">
+                <div class="user-info">
+                    <strong>Alex Johnson</strong>
+                    <p>Posted 2 hours ago</p>
+                </div>
+            </div>
+            <div class="post-content">
+                <p>This is an example post text. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div class="media">
+                    <img src="nature.jpg" alt="Post Image">
+                </div>
+            </div>
+            <div class="post-footer">
+                <div class="post-actions">
+                    <button class="post-action-btn"><i class="fas fa-heart"></i> Like</button>
+                    <button class="post-action-btn"><i class="fas fa-comment-alt"></i> Comment</button>
+                    <button class="post-action-btn"><i class="fas fa-share-alt"></i> Share</button>
+                    <button class="post-action-btn"><i class="fas fa-bookmark"></i> Bookmark</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Second Post -->
+        <div class="post">
+            <div class="post-header">
+                <img src="https://via.placeholder.com/50" alt="User 2" class="user-avatar">
+                <div class="user-info">
+                    <strong>Emily Brown</strong>
+                    <p>Posted 5 hours ago</p>
+                </div>
+            </div>
+            <div class="post-content">
+                <p>Another example post text. Nulla facilisi. Sed viverra congue sapien.</p>
+                <div class="media">
+                    <img src="rainy.jpg" alt="Post Image">
+                </div>
+            </div>
+            <div class="post-footer">
+                <div class="post-actions">
+                    <button class="post-action-btn"><i class="fas fa-heart"></i> Like</button>
+                    <button class="post-action-btn"><i class="fas fa-comment-alt"></i> Comment</button>
+                    <button class="post-action-btn"><i class="fas fa-share-alt"></i> Share</button>
+                    <button class="post-action-btn"><i class="fas fa-bookmark"></i> Bookmark</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Third Post -->
+        <div class="post">
+            <div class="post-header">
+                <img src="https://via.placeholder.com/50" alt="User 3" class="user-avatar">
+                <div class="user-info">
+                    <strong>Mark White</strong>
+                    <p>Posted 10 hours ago</p>
+                </div>
+            </div>
+            <div class="post-content">
+                <p>Another example post text. Nulla facilisi. Sed viverra congue sapien.</p>
+                <div class="media">
+                    <img src="spring.jpg" alt="Post Image">
+                </div>
+            </div>
+            <div class="post-footer">
+                <div class="post-actions">
+                    <button class="post-action-btn"><i class="fas fa-heart"></i> Like</button>
+                    <button class="post-action-btn"><i class="fas fa-comment-alt"></i> Comment</button>
+                    <button class="post-action-btn"><i class="fas fa-share-alt"></i> Share</button>
+                    <button class="post-action-btn"><i class="fas fa-bookmark"></i> Bookmark</button>
+                </div>
+            </div>
+        </div>
+
+
+         <!-- Fourth Post -->
+         <div class="post">
+            <div class="post-header">
+                <img src="https://via.placeholder.com/50" alt="User 4" class="user-avatar">
+                <div class="user-info">
+                    <strong>Sophie Lee</strong>
+                    <p>Posted 1 day ago</p>
+                </div>
+            </div>
+            <div class="post-content">
+                <p>This is an interesting post! Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris.</p>
+                <div class="media">
+                    <img src="summer.jpg" alt="Post Image">
+                </div>
+            </div>
+            <div class="post-footer">
+                <div class="post-actions">
+                    <button class="post-action-btn"><i class="fas fa-heart"></i> Like</button>
+                    <button class="post-action-btn"><i class="fas fa-comment-alt"></i> Comment</button>
+                    <button class="post-action-btn"><i class="fas fa-share-alt"></i> Share</button>
+                    <button class="post-action-btn"><i class="fas fa-bookmark"></i> Bookmark</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fifth Post -->
+        <div class="post">
+            <div class="post-header">
+                <img src="https://via.placeholder.com/50" alt="User 5" class="user-avatar">
+                <div class="user-info">
+                    <strong>John Smith</strong>
+                    <p>Posted 2 days ago</p>
+                </div>
+            </div>
+            <div class="post-content">
+                <p>Learning new things every day! Suspendisse potenti. Fusce dui leo, imperdiet in auctor et, vulputate ut urna.</p>
+                <div class="media">
+                    <img src="winter.jpg" alt="Post Image">
+                </div>
+            </div>
+            <div class="post-footer">
+                <div class="post-actions">
+                    <button class="post-action-btn"><i class="fas fa-heart"></i> Like</button>
+                    <button class="post-action-btn"><i class="fas fa-comment-alt"></i> Comment</button>
+                    <button class="post-action-btn"><i class="fas fa-share-alt"></i> Share</button>
+                    <button class="post-action-btn"><i class="fas fa-bookmark"></i> Bookmark</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sixth Post -->
+        <div class="post">
+            <div class="post-header">
+                <img src="https://via.placeholder.com/50" alt="User 6" class="user-avatar">
+                <div class="user-info">
+                    <strong>Alice Williams</strong>
+                    <p>Posted 3 days ago</p>
+                </div>
+            </div>
+            <div class="post-content">
+                <p>Check out this cool post! Sed non urna. Maecenas lectus dui, aliquet et elementum sit amet, egestas eget dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div class="media">
+                    <img src="day.jpg" alt="Post Image">
+                </div>
+            </div>
+            <div class="post-footer">
+                <div class="post-actions">
+                    <button class="post-action-btn"><i class="fas fa-heart"></i> Like</button>
+                    <button class="post-action-btn"><i class="fas fa-comment-alt"></i> Comment</button>
+                    <button class="post-action-btn"><i class="fas fa-share-alt"></i> Share</button>
+                    <button class="post-action-btn"><i class="fas fa-bookmark"></i> Bookmark</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+</body>
+</html>

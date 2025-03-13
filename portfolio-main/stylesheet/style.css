@@ -1,0 +1,24 @@
+.button-container {
+  margin-top: 3%;
+  margin-left: 3%;
+
+}
+
+h1 {
+  font-size: 20;
+}
+
+.raghav-info {
+  margin-left: 21%;
+    margin-top: 28%;
+}
+
+.raghav-content {
+    margin-top: 19%;
+    margin-left: 1%;
+}
+
+#raghav-content-a{
+  background-color: white;
+  font-size: 32;
+}
