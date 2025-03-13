@@ -1,0 +1,34 @@
+Adding domain in Informatica Tool
+Firstly  we need to change the properties of host to full control by going to 
+C drive-> drive -> windows ->System 32 -> drivers -> etc ->hosts
+Open properties of hosts->Security->enable write permission
+
+Open hosts file and add server which you want to use 
+# the server you dont want to use->Save the changes .
+
+#112.196.62.19 win-q1q79rd01rd
+172.18.20.3 win-q1q79rd01rd
+
+Open the informatica tool 
+File->Connect to repository->configure domain->Add->add the host name (here it is q1q79rd01rd)->Test connection
+
+Username - INT 324
+Password - 123
+
+
+C:\Informatica\10.1.1\server\infa_shared\SrcFiles
+
+
+30_1_25
+
+Creating a PDO                                     (here we would have a option of either dragging the data inside the file or get only a empty one)
+
+
+Right click on Physical Data Object -> New PDO -> Browse dataset ->next->Finish(include 1st row as) 
+
+
+
+
+
+
+C:\Informatica\10.1.1\server\infa_shared\TgtFiles
